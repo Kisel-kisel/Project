@@ -22,6 +22,12 @@ public class ScheduleController {
     public List<Schedule> getSchedule(){
         return list;
     }
+
+    @GetMapping(value = "/scheduleGetSize")
+    public int getScheduleSize(){
+        int size = list.size();
+        return size;
+    }
     @PostMapping(value = "/schedulePost")
     public List<Schedule> postSchedule(){
         return list;
@@ -31,6 +37,11 @@ public class ScheduleController {
     public void deleteSchedule(@RequestBody String id){
         int idNumber = Integer.parseInt(id);
         list.remove(idNumber);
+    }
+
+    @DeleteMapping(value = "/scheduleDeleteAll")
+    public void deleteAllSchedule(){
+        list.clear();
     }
     @PutMapping(value = "/schedulePut/{id}")
     public void putSchedule(@PathVariable String id, @RequestBody Schedule lesson){
