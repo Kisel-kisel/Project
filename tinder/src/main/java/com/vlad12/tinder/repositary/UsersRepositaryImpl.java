@@ -3,6 +3,7 @@ package com.vlad12.tinder.repositary;
 import com.vlad12.tinder.entity.Sex;
 import com.vlad12.tinder.entity.User;
 import jakarta.annotation.PostConstruct;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
