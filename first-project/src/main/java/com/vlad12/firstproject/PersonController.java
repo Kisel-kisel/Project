@@ -39,10 +39,7 @@ public class PersonController {
         int idNumber = Integer.parseInt(id);
       list.remove(idNumber);
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 0842e8f (add)
     @PutMapping(value = "/person/{id}")
     public void updatePerson(@RequestBody Person person,@PathVariable String id){
         int idNumber = Integer.parseInt(id);
