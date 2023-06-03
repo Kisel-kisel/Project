@@ -18,9 +18,10 @@ public class ScheduleController {
     }
 
 
-    @GetMapping(value = "/scheduleGet")
-    public List<Schedule> getSchedule(){
-        return list;
+    @GetMapping(value = "/scheduleGet/{id}")
+    public Schedule getSchedule(@PathVariable String id){
+        int idNumber =  Integer.parseInt(id);
+        return list.get(idNumber);
     }
 
     @GetMapping(value = "/scheduleGetSize")

@@ -1,9 +1,9 @@
-package com.vlad12.tinder.repositary;
+package com.vlad12.tinder.service.database.imp;
 
 import com.vlad12.tinder.entity.Sex;
 import com.vlad12.tinder.entity.User;
+import com.vlad12.tinder.service.UsersDatabaseRepositary;
 import jakarta.annotation.PostConstruct;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Scanner;
 @Primary
 @Component
-public class UsersRepositaryFromFile implements UsersRepositary{
+public class UsersDatabaseRepositaryFromFile implements UsersDatabaseRepositary {
     private List<User> userList;
 
     @PostConstruct

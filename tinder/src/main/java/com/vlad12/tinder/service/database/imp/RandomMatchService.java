@@ -1,7 +1,7 @@
-package com.vlad12.tinder.service.imp;
+package com.vlad12.tinder.service.database.imp;
 
 import com.vlad12.tinder.entity.User;
-import com.vlad12.tinder.repositary.UsersRepositary;
+import com.vlad12.tinder.service.UsersDatabaseRepositary;
 import com.vlad12.tinder.service.MatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,17 +11,17 @@ import java.util.Random;
 
 @Service
 public class RandomMatchService implements MatchService {
-    private UsersRepositary usersRepositary;
+    private UsersDatabaseRepositary usersDatabaseRepositary;
 
     @Autowired
-    public RandomMatchService(UsersRepositary usersRepositary) {
-        this.usersRepositary = usersRepositary;
+    public RandomMatchService(UsersDatabaseRepositary usersDatabaseRepositary) {
+        this.usersDatabaseRepositary = usersDatabaseRepositary;
     }
 
     @Override
     public User getNewMatch() {
 
-        List<User> users = usersRepositary.getUserList();
+        List<User> users = usersDatabaseRepositary.getUserList();
         Random random = new Random();
         int i = random.nextInt(users.size());
         return users.get(i);
