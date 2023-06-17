@@ -37,6 +37,7 @@ public class ScheduleController {
     @DeleteMapping(value = "/scheduleDelete/{id}")
     public void deleteSchedule(@RequestBody String id){
         int idNumber = Integer.parseInt(id);
+
         list.remove(idNumber);
     }
 
