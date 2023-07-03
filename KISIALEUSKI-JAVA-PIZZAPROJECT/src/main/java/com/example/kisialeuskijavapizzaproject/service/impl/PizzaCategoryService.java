@@ -33,4 +33,9 @@ public class PizzaCategoryService implements com.example.kisialeuskijavapizzapro
     public void addPizzaCategory(PizzaCategory pizzaCategory){
         pizzaCategoryRepository.save(pizzaCategory);
     }
-}
+
+
+        }
+
+
+

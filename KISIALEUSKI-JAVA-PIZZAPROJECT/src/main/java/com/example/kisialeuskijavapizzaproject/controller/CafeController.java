@@ -2,6 +2,8 @@ package com.example.kisialeuskijavapizzaproject.controller;
 
 import com.example.kisialeuskijavapizzaproject.entity.Cafe;
 import com.example.kisialeuskijavapizzaproject.service.CafeService;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,9 @@ public class CafeController {
 
 
     private final CafeService service;
+
+    @PersistenceContext
+    private final EntityManager entityManager;
 
     @GetMapping(value = "/get-all-cafes")
     public List<Cafe> getAllCafes() {

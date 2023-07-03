@@ -20,10 +20,8 @@ public class PizzaCategory {
     private String name;
 
     @Column(name = "size")
+    @Enumerated(EnumType.STRING)
     private Size size;
-
-    @Column(name = "ingredients")
-    private String ingredients;
 
     @Column(name = "price")
     private Integer price;

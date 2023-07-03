@@ -39,4 +39,5 @@ public class PizzaCategoryController {
         pizzaData.setId(id);
         service.addPizzaCategory(pizzaData);
     }
+
 }

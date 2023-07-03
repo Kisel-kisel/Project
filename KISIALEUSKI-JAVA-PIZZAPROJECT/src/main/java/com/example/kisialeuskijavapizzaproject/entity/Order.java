@@ -35,6 +35,7 @@ public class Order {
 
     @Column(name = "is_Delivered", columnDefinition = "boolean default false")
     private Boolean isDelivered;
+
     @Column(name = "is_paid",columnDefinition = "boolean default false")
     private boolean isPaid;
 

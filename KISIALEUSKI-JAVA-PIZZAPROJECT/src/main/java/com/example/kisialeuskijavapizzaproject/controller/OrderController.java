@@ -1,8 +1,6 @@
 package com.example.kisialeuskijavapizzaproject.controller;
 
-import com.example.kisialeuskijavapizzaproject.entity.Cafe;
 import com.example.kisialeuskijavapizzaproject.entity.Order;
-import com.example.kisialeuskijavapizzaproject.service.CafeService;
 import com.example.kisialeuskijavapizzaproject.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -35,10 +33,22 @@ public class OrderController {
         service.addOrder(order);
         return order;
     }
-
     @PutMapping(value = "/update-Order/{id}")
-    public void putCafe(@PathVariable(name = "id") Integer id, @RequestBody Order order){
+    public void putOrder(@PathVariable(name = "id") Integer id, @RequestBody Order order){
         order.setId(id);
         service.addOrder(order);
     }
+
+    @PostMapping(value = "/updatePayOrder")
+    public Order updatePayOrder(@RequestBody Order order) {
+        service.changeIsPaid(order);
+        return order;
+    }
+
+    @PostMapping(value = "/updateDeliverOrder")
+    public Order updateDeliverOrder(@RequestBody Order order) {
+        service.changeIsDelivered(order);
+        return order;
+    }
+
 }

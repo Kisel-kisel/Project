@@ -11,4 +11,6 @@ public interface OrderService {
     Optional<Order> findById(Integer id);
     void  deleateOrder(Integer id);
     void addOrder(Order order);
+    void changeIsPaid(Order order);
+    void changeIsDelivered(Order order);
 }

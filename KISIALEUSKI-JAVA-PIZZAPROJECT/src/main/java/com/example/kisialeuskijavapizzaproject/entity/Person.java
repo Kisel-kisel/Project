@@ -33,5 +33,8 @@ public class Person {
     @Column(name = "adress")
     private String adress;
 
+    @Column(name = "money")
+    private Integer money;
+
 
 }
