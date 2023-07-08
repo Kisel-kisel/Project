@@ -8,6 +8,6 @@ import java.util.Optional;
 public interface PizzaCategoryService {
     List<PizzaCategory> getCategoryPizza();
     Optional<PizzaCategory> findPizzaCategoryById(Integer id);
-    void  deleatePizzaCategory(Integer id);
+    boolean deleatePizzaCategory(Integer id);
     void addPizzaCategory(PizzaCategory pizzaCategory);
 }
