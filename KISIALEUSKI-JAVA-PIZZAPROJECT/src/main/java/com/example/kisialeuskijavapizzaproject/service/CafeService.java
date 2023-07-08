@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface CafeService {
    List<Cafe> getCafes();
    Optional<Cafe> findById(Integer id);
-   void  deleateCafe(Integer id);
+   boolean deleteCafe(Integer id);
    void addCafe(Cafe cafe);
 
 

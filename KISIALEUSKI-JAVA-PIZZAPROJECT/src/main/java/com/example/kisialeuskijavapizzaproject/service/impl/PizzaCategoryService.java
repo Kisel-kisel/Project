@@ -25,8 +25,13 @@ public class PizzaCategoryService implements com.example.kisialeuskijavapizzapro
     }
 
     @Override
-    public void deleatePizzaCategory(Integer id){
-        pizzaCategoryRepository.deleteById(id);
+    public boolean deleatePizzaCategory(Integer id){
+        Optional<PizzaCategory> optionalPizzaCategory = pizzaCategoryRepository.findById(id);
+        if(optionalPizzaCategory.isPresent()){
+            pizzaCategoryRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 
     @Override

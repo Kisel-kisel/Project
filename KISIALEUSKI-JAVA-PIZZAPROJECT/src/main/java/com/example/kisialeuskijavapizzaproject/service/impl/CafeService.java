@@ -27,8 +27,13 @@ public class CafeService implements com.example.kisialeuskijavapizzaproject.serv
     }
 
     @Override
-    public void deleateCafe(Integer id){
-        cafeRepository.deleteById(id);
+    public boolean deleteCafe(Integer id) {
+        Optional<Cafe> cafeOptional = cafeRepository.findById(id);
+        if (cafeOptional.isPresent()) {
+            cafeRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 
     @Override
