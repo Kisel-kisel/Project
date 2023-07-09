@@ -6,6 +6,14 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface QuantityPizzaRepository extends JpaRepository<QuantityPizza, Integer> {
+
+    /**
+     * Shows the required amount of pizza ingredients
+     *
+     * @param pizzaId a certain category of pizza
+     *
+     * @return required amount of pizza ingredients
+     */
     @Query(value = "SELECT  id, pizza_category_id, product_id, quantity\n" +
             "FROM project.quantity_pizza\n" +
             "WHERE pizza_category_id = ?\n" +

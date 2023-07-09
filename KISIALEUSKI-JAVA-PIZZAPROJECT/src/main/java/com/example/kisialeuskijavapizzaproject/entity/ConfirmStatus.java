@@ -2,9 +2,8 @@ package com.example.kisialeuskijavapizzaproject.entity;
 
 public enum ConfirmStatus {
 
-    processed,
-
-    confirmed,
-    inWay
+    PROCESSED,
+    CONFIRMED,
+    INWAY
 
 }
