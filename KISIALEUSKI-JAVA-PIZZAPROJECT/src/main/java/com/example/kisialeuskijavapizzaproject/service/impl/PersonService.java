@@ -31,8 +31,8 @@ public class PersonService implements com.example.kisialeuskijavapizzaproject.se
     }
 
     @Override
-    public void addPerson(Person Person){
-        personRepository.save(Person);
+    public void addPerson(Person person){
+        personRepository.save(person);
     }
 
 

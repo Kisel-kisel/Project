@@ -31,27 +31,23 @@ public class PizzaService implements com.example.kisialeuskijavapizzaproject.ser
         List<QuantityCafe> list = quantityCafeService.findAllQuantityCafesByCafeId(cafeId);
         List<QuantityPizza> listPizza = quantityPizzaService.findQuantityPizzaById(pizzaId);
 
-//        QuantityCafe quantityCafe;
-//        QuantityPizza quantityPizza;
-
         Integer differ = 1;
         if (newCount > oldCount) {
             differ = newCount - oldCount;
         }
 
         int index2 = 0;
+        QuantityCafe cafe = null;
 
         for (int i = 0; i < listPizza.size(); i++) {
             QuantityPizza quantityPizza = listPizza.get(i);
-            QuantityCafe quantityCafe = list.get(i);
             int number = quantityPizza.getProductId();
 
             // Поиск объекта quantityCafe с соответствующим номером продукта
             boolean found = false;
             for (int j = index2; j < list.size(); j++) {
-                QuantityCafe cafe = list.get(j);
+                cafe = list.get(j);
                 if (cafe.getProductId() == number) {
-                    quantityCafe = cafe;
                     index2 = j + 1;
                     found = true;
                     break;
@@ -61,8 +57,8 @@ public class PizzaService implements com.example.kisialeuskijavapizzaproject.ser
             if (found) {
                 Float pizzaQuantity = quantityPizza.getQuantity();
                 Float result = differ * pizzaQuantity;
-                quantityCafe.setQuantity(quantityCafe.getQuantity() - result);
-                quantityCafeService.saveQuantityCafe(quantityCafe);
+                cafe.setQuantity(cafe.getQuantity() - result);
+                quantityCafeService.saveQuantityCafe(cafe);
             }
         }
 

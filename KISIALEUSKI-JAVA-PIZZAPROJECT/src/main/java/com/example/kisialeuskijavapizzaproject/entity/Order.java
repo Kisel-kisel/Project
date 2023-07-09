@@ -39,5 +39,4 @@ public class Order {
     @Column(name = "is_paid",columnDefinition = "boolean default false")
     private boolean isPaid;
 
-
 }

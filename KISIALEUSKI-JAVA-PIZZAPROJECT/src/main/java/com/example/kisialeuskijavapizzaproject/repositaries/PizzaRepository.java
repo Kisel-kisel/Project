@@ -10,6 +10,15 @@ import java.util.List;
 
 @Repository
 public interface PizzaRepository extends JpaRepository<Pizza, Integer> {
+
+    /**
+     *Shows the quantity of a certain category of pizza in a certain cafe
+     *
+     * @param cafeId  certain cafe
+     * @param pizzaId certain category of pizza
+     *
+     * @return quantity of selected category of pizza in a selected cafe
+     */
     @Query(value = "SELECT project.pizza.count\n" +
             "FROM project.pizza\n" +
             "WHERE cafe_id = ? AND  pizza_category_id = ?;", nativeQuery = true )
