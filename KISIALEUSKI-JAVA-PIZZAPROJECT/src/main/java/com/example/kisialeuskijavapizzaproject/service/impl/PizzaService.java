@@ -4,8 +4,10 @@ import com.example.kisialeuskijavapizzaproject.entity.*;
 import com.example.kisialeuskijavapizzaproject.repositaries.*;
 import com.example.kisialeuskijavapizzaproject.service.QuantityCafeService;
 import com.example.kisialeuskijavapizzaproject.service.QuantityPizzaService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -20,6 +22,8 @@ public class PizzaService implements com.example.kisialeuskijavapizzaproject.ser
     @Autowired
     private QuantityPizzaService quantityPizzaService;
 
+
+    @Transactional
     @Override
     public void addPizza(Pizza pizzaData) {
         Integer cafeId = pizzaData.getCafeId();

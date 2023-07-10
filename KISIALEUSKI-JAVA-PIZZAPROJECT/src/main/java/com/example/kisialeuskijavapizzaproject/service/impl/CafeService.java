@@ -4,6 +4,7 @@ import com.example.kisialeuskijavapizzaproject.entity.Cafe;
 import com.example.kisialeuskijavapizzaproject.repositaries.CafeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,6 +27,7 @@ public class CafeService implements com.example.kisialeuskijavapizzaproject.serv
       return cafe;
     }
 
+    @Transactional
     @Override
     public boolean deleteCafe(Integer id) {
         Optional<Cafe> cafeOptional = cafeRepository.findById(id);
@@ -36,6 +38,7 @@ public class CafeService implements com.example.kisialeuskijavapizzaproject.serv
         return false;
     }
 
+    @Transactional
     @Override
     public void addCafe(Cafe cafe){
         cafeRepository.save(cafe);

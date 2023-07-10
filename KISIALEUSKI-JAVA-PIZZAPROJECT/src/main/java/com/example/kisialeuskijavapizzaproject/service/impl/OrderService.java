@@ -7,6 +7,7 @@ import com.example.kisialeuskijavapizzaproject.repositaries.PizzaCategoryReposit
 import com.example.kisialeuskijavapizzaproject.repositaries.PizzaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,16 +38,19 @@ public class OrderService implements com.example.kisialeuskijavapizzaproject.ser
         return order;
     }
 
+    @Transactional
     @Override
     public void deleateOrder(Integer id) {
         orderRepository.deleteById(id);
     }
 
+    @Transactional
     @Override
     public void addOrder(Order order) {
         orderRepository.save(order);
     }
 
+    @Transactional
     @Override
     public void changeIsPaid(Order order) {
         Optional<Order> optionalOrder = orderRepository.findById(order.getId());
@@ -64,10 +68,11 @@ public class OrderService implements com.example.kisialeuskijavapizzaproject.ser
             orderRepository.save(upOrder);
         }
         if (order.isPaid()==true){
-            order.setConfirmStatus(ConfirmStatus.confirmed);
+            order.setConfirmStatus(ConfirmStatus.CONFIRMED);
         }
     }
 
+    @Transactional
     @Override
     public void changeIsDelivered(Order order){
         order.setIsDelivered(true);
