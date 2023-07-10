@@ -3,6 +3,7 @@ import com.example.kisialeuskijavapizzaproject.entity.PizzaCategory;
 import com.example.kisialeuskijavapizzaproject.repositaries.PizzaCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,6 +25,7 @@ public class PizzaCategoryService implements com.example.kisialeuskijavapizzapro
         return pizzaCategory;
     }
 
+    @Transactional
     @Override
     public boolean deleatePizzaCategory(Integer id){
         Optional<PizzaCategory> optionalPizzaCategory = pizzaCategoryRepository.findById(id);
@@ -34,11 +36,11 @@ public class PizzaCategoryService implements com.example.kisialeuskijavapizzapro
         return false;
     }
 
+    @Transactional
     @Override
     public void addPizzaCategory(PizzaCategory pizzaCategory){
         pizzaCategoryRepository.save(pizzaCategory);
     }
-
 
         }
 

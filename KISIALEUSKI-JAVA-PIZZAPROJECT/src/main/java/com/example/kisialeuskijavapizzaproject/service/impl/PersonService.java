@@ -4,6 +4,7 @@ import com.example.kisialeuskijavapizzaproject.entity.Person;
 import com.example.kisialeuskijavapizzaproject.repositaries.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,11 +26,13 @@ public class PersonService implements com.example.kisialeuskijavapizzaproject.se
         return Person;
     }
 
+    @Transactional
     @Override
     public void deleatePerson(Integer id){
         personRepository.deleteById(id);
     }
 
+    @Transactional
     @Override
     public void addPerson(Person person){
         personRepository.save(person);
