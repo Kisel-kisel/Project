@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class OrderServiceTest {
+public class OrderServiceTest {
 
     @Mock
     private OrderRepository orderRepository;
@@ -88,12 +88,13 @@ class OrderServiceTest {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         Pizza pizza = new Pizza(1,1,1,20);
-        Order order = new Order(1, timestamp,1,1,1, ConfirmStatus.CONFIRMED,false,true);
-        pizza.setCount(30);
+        Order order = new Order(1, timestamp,1,1,1, ConfirmStatus.CONFIRMED,true,true);
+    
 
 
         when(orderRepository.save(order)).thenReturn(order);
-        when(orderRepository.findById(order.getPizzaCategoryId())).thenReturn(Optional.of(order));
+//        when(orderRepository.findById(order.getPizzaCategoryId())).thenReturn(Optional.of(order));
+        when(pizzaRepository.findById(order.getPizzaCategoryId())).thenReturn(Optional.of(pizza));
         when(pizzaRepository.save(pizza)).thenReturn(pizza);
 
         orderService.changeIsDelivered(order);

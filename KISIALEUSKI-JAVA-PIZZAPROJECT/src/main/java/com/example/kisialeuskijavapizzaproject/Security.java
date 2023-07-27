@@ -30,10 +30,11 @@
 //    @Bean
 //    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 //        LogoutConfigurer<HttpSecurity> logout = http.authorizeHttpRequests()
-//                .requestMatchers("/get-cafe/{id}").authenticated()
-//                .requestMatchers("/get-all-cafes", "/get-all-pizzas ", "/get-all-person").hasRole(String.valueOf(Status.USER))
-//                .requestMatchers("/get-person/{id}").hasRole(String.valueOf(Status.ADMIN))
-//                .anyRequest().permitAll()
+//                .requestMatchers("/get-all-orders", "/get-order/{id}","/get-all-person","/get-person/{id}","/delete-person/{id}","/add-person").authenticated()
+//                .requestMatchers("/add-order","/update-Order/{id}","/updatePayOrder","/updateDeliverOrder").hasRole(String.valueOf(Status.USER))
+//                .requestMatchers("/persons-pizzas/{id}","/persons-cafes/{id}","/persons-money/{id}","/count_of_orders/{id}""/get-earnings-table","/get-cafe-pizza/{id}/{pizzaId}","/get-earnings-cafe/{id}","/delete-cafe/{id}","/add-сafe","/update-cafe/{id}","/delete-order/{id}","/update_count",
+//"/update-pizzas/{id}").hasRole(String.valueOf(Status.ADMIN))
+//                .anyRequest("/get-all-cafes", "/get-cafe/{id}","/get-all-pizzas", "/get-pizza/{id}" ).permitAll()
 //                .and()
 //                .formLogin()
 //                .and()

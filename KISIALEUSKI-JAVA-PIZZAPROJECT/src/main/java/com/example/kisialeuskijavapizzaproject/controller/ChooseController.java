@@ -23,7 +23,7 @@ public class ChooseController {
         return service.selectById(id,pizzaId);
     }
 
-    @GetMapping(value = "/get-earnings-cafe/{Id}")
+    @GetMapping(value = "/get-earnings-cafe/{id}")
     public List<String> getEarCafe(@PathVariable Integer Id){
         return service.getEarningsCafe(Id);
     }

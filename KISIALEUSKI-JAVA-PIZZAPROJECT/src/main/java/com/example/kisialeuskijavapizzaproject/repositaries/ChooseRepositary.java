@@ -11,12 +11,19 @@ import java.util.List;
 public interface ChooseRepositary extends JpaRepository<Pizza,Integer> {
 
     /**
-     *Shows the quantity of a certain category of pizza in a certain cafe
+     * Shows the quantity of a certain category of pizza in a certain cafe
      *
      * @param id  certain cafe
      * @param pizzaId certain category of pizza
      *
      * @return quantity of selected category of pizza in a selected cafe
+     */
+
+    /**
+     *
+     * @param id
+     * @param pizzaId
+     * @return
      */
 
     @Query(value = "SELECT cafes.name, pizza_category.name, pizza.count\n" +
