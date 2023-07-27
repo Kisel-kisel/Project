@@ -28,8 +28,6 @@ public class QuantityCafe {
     @Column(name = "quantity")
     private Float quantity;
 
-    @Column(name = "unit")
-    private String unit;
 
 
 }

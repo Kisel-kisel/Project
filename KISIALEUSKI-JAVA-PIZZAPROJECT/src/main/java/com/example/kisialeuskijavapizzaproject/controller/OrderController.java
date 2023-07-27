@@ -28,7 +28,7 @@ public class OrderController {
         service.deleateOrder(id);
     }
 
-    @PostMapping(value = "/addOrder")
+    @PostMapping(value = "/add-order")
     public Order addNewOrder(@RequestBody Order order) {
         service.addOrder(order);
         return order;

@@ -27,7 +27,7 @@ public class AboutPersonService implements AboutPersons {
         return cafes;
     }
     @Override
-    public Integer  getPersonMoney(Integer id){
+    public Integer getPersonMoney(Integer id){
         Integer  sum = aboutPersonRepository.personMoney(id);
         return sum;
     }
