@@ -19,13 +19,6 @@ public interface ChooseRepositary extends JpaRepository<Pizza,Integer> {
      * @return quantity of selected category of pizza in a selected cafe
      */
 
-    /**
-     *
-     * @param id
-     * @param pizzaId
-     * @return
-     */
-
     @Query(value = "SELECT cafes.name, pizza_category.name, pizza.count\n" +
             "            FROM project.cafes\n" +
             "            JOIN project.pizza ON cafes.id = pizza.cafe_id\n" +
